@@ -6,7 +6,7 @@ import Nav from './components/Nav/Nav';
 
 export default function App() {
   return (
-    <div>
+    <div className={styles.app}>
       <Nav />
       <Contents />
       <Input />
