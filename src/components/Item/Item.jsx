@@ -9,16 +9,20 @@ export default function Item({ todoItem, onDelete }) {
   return (
     <li className={styles.item}>
       <span>
-        <input
-          className={styles.checkBox}
-          type={'checkbox'}
-          id="checkBox"
-          name="checkBox"
-        />
-        <label form="checkBox" className={styles.todoItem}>
-          {todoItem}
+        <label form="checkBox" className={styles.item__checkbox}>
+          <input
+            className={styles.checkbox__default}
+            type={'checkbox'}
+            id="checkBox"
+            name="checkBox"
+          />
+          <span
+            className={`${styles.checkbox__new} ${styles.checkbox__new_bg}`}
+          ></span>
+          <span className={styles.todoItem}>{todoItem}</span>
         </label>
       </span>
+
       <button onClick={handleDelete}>
         <BsTrash className={styles.trashIcon} />
       </button>
