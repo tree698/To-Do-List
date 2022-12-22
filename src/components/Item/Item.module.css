@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkBox {
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+.todoItem {
+  margin-left: 4px;
+  font-size: 18px;
+  /* cursor: pointer; */
+}
+
+.trashIcon {
+  font-size: 20px;
+  background-color: lightgray;
+  border-radius: 50%;
+  padding: 4px;
+}
