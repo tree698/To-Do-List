@@ -2,9 +2,9 @@ import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import styles from './Item.module.css';
 
-export default function Item({ todoItem, onDelete }) {
+export default function Item({ todo, onDelete }) {
   const handleDelete = (e) => {
-    onDelete(todoItem);
+    onDelete(todo);
   };
   return (
     <li className={styles.item}>
@@ -19,7 +19,7 @@ export default function Item({ todoItem, onDelete }) {
           <span
             className={`${styles.checkbox__new} ${styles.checkbox__new_bg}`}
           ></span>
-          <span className={styles.todoItem}>{todoItem}</span>
+          <span className={styles.todoItem}>{todo.todoItem}</span>
         </label>
       </span>
 

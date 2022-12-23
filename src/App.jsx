@@ -12,7 +12,7 @@ export default function App() {
   };
 
   const handleDelete = (todoItem) => {
-    setTodo((prev) => todo.filter((t) => t.todoItem !== todoItem));
+    setTodo((prev) => todo.filter((t) => t.id !== todoItem.id));
   };
 
   return (

@@ -6,7 +6,7 @@ export default function Items({ todo, onDelete }) {
   return (
     <ul className={styles.contents}>
       {todo.map((t) => (
-        <Item key={t.id} todoItem={t.todoItem} onDelete={onDelete} />
+        <Item key={t.id} todo={t} onDelete={onDelete} />
       ))}
     </ul>
   );
