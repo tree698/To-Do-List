@@ -8,8 +8,8 @@ import styles from './App.module.css';
 export default function App() {
   const [todo, setTodo] = useState([]);
 
-  const handleTodoItem = (todoItem) => {
-    setTodo((prev) => [...todo, { id: uuidv4(), todoItem, status: false }]);
+  const handleOnAdd = (todoItem) => {
+    setTodo((prev) => [...todo, { id: uuidv4(), todoItem, status: 'active' }]);
   };
 
   const handleDelete = (todoItem) => {
@@ -20,7 +20,7 @@ export default function App() {
     <div className={styles.app}>
       <Nav />
       <Items todo={todo} onDelete={handleDelete} />
-      <AddForm onTodoItem={handleTodoItem} />
+      <AddForm onAdd={handleOnAdd} />
     </div>
   );
 }
