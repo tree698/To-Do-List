@@ -2,27 +2,27 @@ import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import styles from './Item.module.css';
 
-export default function Item({ todo, onDelete }) {
+export default function Item({ todo, onDelete, onUpdate }) {
   const handleDelete = (e) => {
     onDelete(todo);
   };
+
+  const handleOnUpdate = (e) => {
+    const status = e.target.checked ? 'completed' : 'active';
+    onUpdate({ ...todo, status });
+  };
+
+  const { todoItem, status } = todo;
+
   return (
     <li className={styles.item}>
-      <span>
-        <label form="checkBox" className={styles.item__checkbox}>
-          <input
-            className={styles.checkbox__default}
-            type={'checkbox'}
-            id="checkBox"
-            name="checkBox"
-          />
-          <span
-            className={`${styles.checkbox__new} ${styles.checkbox__new_bg}`}
-          ></span>
-          <span className={styles.todoItem}>{todo.todoItem}</span>
-        </label>
-      </span>
-
+      <input
+        type="checkbox"
+        id="text"
+        checked={status === 'completed'}
+        onChange={handleOnUpdate}
+      />
+      <label htmlFor="text">{todoItem}</label>
       <button onClick={handleDelete}>
         <BsTrash className={styles.trashIcon} />
       </button>

@@ -6,7 +6,6 @@ export default function AddForm({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (text.trim().length === 0) return;
     onAdd(text);
     setText('');
