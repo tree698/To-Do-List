@@ -3,7 +3,7 @@
   --bg-bright: #f6f6f6;
   --bg-superBright: #262844;
   --bg-dark: #1c1e3d;
-  --color-orange: #f47902;
+  --color-blue: #0c90e4;
   --color-white: #ffffff;
   --color-font: #999a9d;
   --color-font-delete: #c3c4c6;
@@ -28,6 +28,13 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--bg-body);
+
+  background: rgb(222, 226, 230);
+  background: radial-gradient(
+    circle,
+    rgba(222, 226, 230, 1) 0%,
+    rgba(78, 83, 106, 1) 47%
+  );
 }
 
 code {
@@ -44,6 +51,16 @@ button {
 
 ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 50%;
+  max-width: 500px;
+  background-color: var(--bg-bright);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
 }
