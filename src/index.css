@@ -1,9 +1,8 @@
 :root {
   --bg-body: #4e536a;
   --bg-bright: #f6f6f6;
-  --bg-superBright: #262844;
-  --bg-dark: #1c1e3d;
   --color-blue: #0c90e4;
+  --color-orange: #f16e03;
   --color-white: #ffffff;
   --color-font: #999a9d;
   --color-font-delete: #c3c4c6;
@@ -47,6 +46,7 @@ button {
   outline: 0;
   border: 0;
   cursor: pointer;
+  padding: 0;
 }
 
 ul {
@@ -60,6 +60,7 @@ ul {
   max-width: 500px;
   background-color: var(--bg-bright);
   border-radius: 10px;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;

@@ -10,7 +10,7 @@ export default function AddForm({ onAdd }) {
     if (text.trim().length === 0) {
       return;
     }
-    onAdd({ id: uuidv4(), text, status: 'Active' });
+    onAdd({ id: uuidv4(), text, status: 'active' });
     setText('');
   };
 

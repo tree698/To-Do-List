@@ -5,7 +5,7 @@ import styles from './Item.module.css';
 export default function Item({ todo, onDelete, onUpdate }) {
   const { text, status } = todo;
   const handleUpdate = (e) => {
-    const status = e.target.checked ? 'Completed' : 'Active';
+    const status = e.target.checked ? 'completed' : 'active';
     onUpdate({ ...todo, status });
   };
   const handleDelete = (e) => onDelete(todo);
@@ -15,7 +15,7 @@ export default function Item({ todo, onDelete, onUpdate }) {
       <input
         type="checkbox"
         id="text"
-        checked={status === 'Completed'}
+        checked={status === 'completed'}
         onChange={handleUpdate}
       />
       <label htmlFor="text">{text}</label>

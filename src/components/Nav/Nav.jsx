@@ -2,7 +2,7 @@ import { BsFillMoonFill } from 'react-icons/bs';
 import React from 'react';
 import styles from './Nav.module.css';
 
-export default function Nav({ filters, onFilterChange }) {
+export default function Nav({ filters, filter, onFilterChange }) {
   // const handleClick = (e) => {
   //   onFilterChange(e.target.textContent);
   // };
@@ -15,7 +15,14 @@ export default function Nav({ filters, onFilterChange }) {
       <ul className={styles.menu__container}>
         {filters.map((value, index) => (
           <li key={index}>
-            <button onClick={() => onFilterChange(value)}>{value}</button>
+            <button
+              className={`${styles.menu} ${
+                filter === value && styles.selected
+              }`}
+              onClick={() => onFilterChange(value)}
+            >
+              {value}
+            </button>
           </li>
         ))}
       </ul>
