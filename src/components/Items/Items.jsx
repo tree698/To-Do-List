@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item';
 import AddForm from '../AddForm/AddForm';
 import styles from './Items.module.css';
 
 export default function Items({ filter }) {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => readTodos());
+
+  // useEffect(() => {
+  //   setTodos((todo) => readTodos());
+  // }, []);
 
   const handleAdd = (todo) => setTodos([...todos, todo]);
   const handleUpdate = (update) => {
@@ -13,6 +17,10 @@ export default function Items({ filter }) {
   const handleDelete = (todoItem) => {
     setTodos(todos.filter((t) => t.id !== todoItem.id));
   };
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const filtered = getFilteredItem(todos, filter);
   return (
@@ -30,6 +38,11 @@ export default function Items({ filter }) {
       <AddForm onAdd={handleAdd} />
     </section>
   );
+}
+
+function readTodos() {
+  const todos = localStorage.getItem('todos');
+  return todos ? JSON.parse(todos) : [];
 }
 
 function getFilteredItem(todos, filter) {
