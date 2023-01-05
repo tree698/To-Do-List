@@ -1,9 +1,10 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import styles from './Item.module.css';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Item({ todo, onDelete, onUpdate }) {
-  const { text, status } = todo;
+  const { id, text, status } = todo;
   const handleUpdate = (e) => {
     const status = e.target.checked ? 'completed' : 'active';
     onUpdate({ ...todo, status });
@@ -15,12 +16,12 @@ export default function Item({ todo, onDelete, onUpdate }) {
       <div>
         <input
           type="checkbox"
-          id="text"
+          id={id}
           checked={status === 'completed'}
           onChange={handleUpdate}
           className={styles.input}
         />
-        <label htmlFor="text">{text}</label>
+        <label htmlFor={id}>{text}</label>
       </div>
       <button onClick={handleDelete}>
         <BsTrash className={styles.trashIcon} />
