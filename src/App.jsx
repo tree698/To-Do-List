@@ -6,9 +6,7 @@ const filters = ['all', 'active', 'completed'];
 
 export default function App() {
   const [filter, setFilter] = useState(filters[0]);
-  // const handleFilterChange = (filter) => {
-  //   setFilter(filter);
-  // };
+
   return (
     <>
       <Nav filters={filters} filter={filter} onFilterChange={setFilter} />

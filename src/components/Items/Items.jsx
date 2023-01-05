@@ -16,7 +16,7 @@ export default function Items({ filter }) {
 
   const filtered = getFilteredItem(todos, filter);
   return (
-    <section>
+    <section className={styles.items}>
       <ul className={styles.contents}>
         {filtered.map((item) => (
           <Item
@@ -33,7 +33,7 @@ export default function Items({ filter }) {
 }
 
 function getFilteredItem(todos, filter) {
-  if (filter === 'All') {
+  if (filter === 'all') {
     return todos;
   }
   return todos.filter((t) => t.status === filter);

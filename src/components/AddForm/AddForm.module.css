@@ -1,18 +1,11 @@
 .footer {
-  width: 100%;
-  height: 60px;
-
-  background-color: var(--bg-bright);
-  border-radius: 0 0 10px 10px;
-
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1.4rem 1rem;
+  background-color: var(--bg-bright);
 }
 
 .input {
-  width: 74%;
-  height: 30px;
+  flex: 1 0 auto;
   border: none;
   background-color: var(--color-white);
   border-radius: 6px 0 0 6px;
@@ -25,8 +18,12 @@
 .btn {
   width: 60px;
   height: 30px;
-  background-color: var(--color-orange);
+  background-color: var(--color-blue);
   color: var(--color-white);
   border-radius: 0 6px 6px 0;
   font-weight: bold;
+}
+
+.btn:hover {
+  filter: brightness(125%);
 }

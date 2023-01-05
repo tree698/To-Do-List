@@ -12,13 +12,16 @@ export default function Item({ todo, onDelete, onUpdate }) {
 
   return (
     <li className={styles.item}>
-      <input
-        type="checkbox"
-        id="text"
-        checked={status === 'completed'}
-        onChange={handleUpdate}
-      />
-      <label htmlFor="text">{text}</label>
+      <div>
+        <input
+          type="checkbox"
+          id="text"
+          checked={status === 'completed'}
+          onChange={handleUpdate}
+          className={styles.input}
+        />
+        <label htmlFor="text">{text}</label>
+      </div>
       <button onClick={handleDelete}>
         <BsTrash className={styles.trashIcon} />
       </button>

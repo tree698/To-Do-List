@@ -3,10 +3,6 @@ import React from 'react';
 import styles from './Nav.module.css';
 
 export default function Nav({ filters, filter, onFilterChange }) {
-  // const handleClick = (e) => {
-  //   onFilterChange(e.target.textContent);
-  // };
-
   return (
     <nav className={styles.nav}>
       <button>
