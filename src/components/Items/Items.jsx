@@ -4,11 +4,7 @@ import AddForm from '../AddForm/AddForm';
 import styles from './Items.module.css';
 
 export default function Items({ filter }) {
-  const [todos, setTodos] = useState(() => readTodos());
-
-  // useEffect(() => {
-  //   setTodos((todo) => readTodos());
-  // }, []);
+  const [todos, setTodos] = useState(readTodos);
 
   const handleAdd = (todo) => setTodos([...todos, todo]);
   const handleUpdate = (update) => {

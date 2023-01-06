@@ -1,7 +1,6 @@
 import React from 'react';
 import { BsTrash } from 'react-icons/bs';
 import styles from './Item.module.css';
-import { v4 as uuidv4 } from 'uuid';
 
 export default function Item({ todo, onDelete, onUpdate }) {
   const { id, text, status } = todo;
